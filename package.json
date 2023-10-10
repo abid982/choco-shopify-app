@@ -13,7 +13,8 @@
   },
   "dependencies": {
     "@shopify/app": "3.49.6",
-    "@shopify/cli": "3.49.6"
+    "@shopify/cli": "3.49.6",
+    "axios": "^1.5.1"
   },
   "author": "abid",
   "private": true,

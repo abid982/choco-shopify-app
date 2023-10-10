@@ -1,3 +1,4 @@
+import axios from 'axios';
 import { useState } from "react";
 import { Card, TextContainer, Text } from "@shopify/polaris";
 import { Toast } from "@shopify/app-bridge-react";
@@ -49,6 +50,53 @@ export function ProductsCard() {
       });
     }
   };
+
+  console.log('Hello from product card!');
+
+  // Creat a function
+  const fetchCollection = async () => {
+    try {
+      const response = await fetch('/api/collections/428406210838');
+      const data = await response.json();
+      // await axios.get('/api/collections/444214018326').then(res => {
+      //   console.log(res)
+      // });
+      console.log(data);
+    } catch (err) {
+      console.log('Error:');
+
+
+      console.log(err);
+    }
+  };
+
+  const fetchOrders = async () => {
+    try {
+      const response = await fetch('/api/orders');
+      const data = await response.json();
+      console.log('Orders data:');
+      console.log(data);
+    } catch (err) {
+      console.log('Error...');
+      console.log(err);
+    }
+  };
+
+  const fetchCustomers = async () => {
+    try {
+      const response = await fetch('/api/customers');
+      const data = await response.json();
+      console.log('Customers data:');
+      console.log(data);
+    } catch (err) {
+      console.log('Error from fetching customer...');
+      console.log(err);
+    }
+  };
+
+  fetchCollection();
+  fetchOrders();
+  fetchCustomers();
 
   return (
     <>

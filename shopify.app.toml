@@ -2,18 +2,18 @@
 
 name = "choco-app"
 client_id = "1a22b7369fade10ae365cc40db233ec4"
-application_url = "https://village-falls-allocation-previously.trycloudflare.com"
+application_url = "https://uv-equilibrium-pledge-conceptual.trycloudflare.com"
 embedded = true
 
 [access_scopes]
 # Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
-scopes = "write_products"
+scopes = "write_products,read_orders,read_customers"
 
 [auth]
 redirect_urls = [
-  "https://village-falls-allocation-previously.trycloudflare.com/auth/callback",
-  "https://village-falls-allocation-previously.trycloudflare.com/auth/shopify/callback",
-  "https://village-falls-allocation-previously.trycloudflare.com/api/auth/callback"
+  "https://uv-equilibrium-pledge-conceptual.trycloudflare.com/auth/callback",
+  "https://uv-equilibrium-pledge-conceptual.trycloudflare.com/auth/shopify/callback",
+  "https://uv-equilibrium-pledge-conceptual.trycloudflare.com/api/auth/callback"
 ]
 
 [webhooks]
