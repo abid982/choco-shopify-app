@@ -2,7 +2,7 @@
 
 name = "choco-app"
 client_id = "1a22b7369fade10ae365cc40db233ec4"
-application_url = "https://uv-equilibrium-pledge-conceptual.trycloudflare.com"
+application_url = "https://colin-rm-bell-ice.trycloudflare.com"
 embedded = true
 
 [access_scopes]
@@ -11,9 +11,9 @@ scopes = "write_products,read_orders,read_customers"
 
 [auth]
 redirect_urls = [
-  "https://uv-equilibrium-pledge-conceptual.trycloudflare.com/auth/callback",
-  "https://uv-equilibrium-pledge-conceptual.trycloudflare.com/auth/shopify/callback",
-  "https://uv-equilibrium-pledge-conceptual.trycloudflare.com/api/auth/callback"
+  "https://colin-rm-bell-ice.trycloudflare.com/auth/callback",
+  "https://colin-rm-bell-ice.trycloudflare.com/auth/shopify/callback",
+  "https://colin-rm-bell-ice.trycloudflare.com/api/auth/callback"
 ]
 
 [webhooks]

@@ -1,93 +1,161 @@
 import {
-  Card,
   Page,
+  LegacyStack,
   Layout,
-  TextContainer,
-  Image,
-  Stack,
-  Link,
+  Badge,
   Text,
+  LegacyCard,
+  Popover,
+  ActionList,
+  Button,
+  Select,
+  ButtonGroup
 } from "@shopify/polaris";
-import { TitleBar } from "@shopify/app-bridge-react";
-import { useTranslation, Trans } from "react-i18next";
 
-import { trophyImage } from "../assets";
+import {useState, useCallback} from 'react';
 
-import { ProductsCard } from "../components";
+import CustomSidebar from './../components/CustomSidebar';
 
 export default function HomePage() {
-  const { t } = useTranslation();
+  const [selected, setSelected] = useState('today');
+
+  const handleSelectChange = useCallback(value => setSelected(value), []);
+
+  const options = [
+    {label: 'Today', value: 'today'},
+    {label: 'Yesterday', value: 'yesterday'},
+    {label: 'Last 7 days', value: 'lastWeek'},
+  ];
+
+  // const [popoverActive, setPopoverActive] = useState(true);
+
+  // const togglePopoverActive = useCallback(() => setPopoverActive(popoverActive => !popoverActive), []);
+
+  // const activator = (
+  //   <Button onClick={togglePopoverActive}>More actions</Button>
+  // )
+
+  // const [active, setActive] = useState(true);
+
+  // const toggleActive = useCallback(() => setActive((active) => !active), []);
+
+  // const handleImportedAction = useCallback(
+  //   () => console.log('Imported action'),
+  //   [],
+  // );
+
+  // const handleImportedAction = () => {
+  //   setActive(active => !active);
+  //   console.log('Handle imported action!');
+  // };
+
+  // const handleExportedAction = useCallback(() => console.log('Exported action'),
+  //   [],
+  // );
+
+  // const activator = (
+  //   <Button onClick={toggleActive} disclosure>
+  //     More actions
+  //   </Button>
+  // );
+
   return (
-    <Page narrowWidth>
-      <TitleBar title={t("HomePage.title")} primaryAction={null} />
-      <Layout>
-        <Layout.Section>
-          <Card sectioned>
-            <Stack
-              wrap={false}
-              spacing="extraTight"
-              distribution="trailing"
-              alignment="center"
-            >
-              <Stack.Item fill>
-                <TextContainer spacing="loose">
-                  <Text as="h2" variant="headingMd">
-                    {t("HomePage.heading")}
-                  </Text>
-                  <p>
-                    <Trans
-                      i18nKey="HomePage.yourAppIsReadyToExplore"
-                      components={{
-                        PolarisLink: (
-                          <Link url="https://polaris.shopify.com/" external />
-                        ),
-                        AdminApiLink: (
-                          <Link
-                            url="https://shopify.dev/api/admin-graphql"
-                            external
-                          />
-                        ),
-                        AppBridgeLink: (
-                          <Link
-                            url="https://shopify.dev/apps/tools/app-bridge"
-                            external
-                          />
-                        ),
-                      }}
-                    />
-                  </p>
-                  <p>{t("HomePage.startPopulatingYourApp")}</p>
-                  <p>
-                    <Trans
-                      i18nKey="HomePage.learnMore"
-                      components={{
-                        ShopifyTutorialLink: (
-                          <Link
-                            url="https://shopify.dev/apps/getting-started/add-functionality"
-                            external
-                          />
-                        ),
-                      }}
-                    />
-                  </p>
-                </TextContainer>
-              </Stack.Item>
-              <Stack.Item>
-                <div style={{ padding: "0 20px" }}>
-                  <Image
-                    source={trophyImage}
-                    alt={t("HomePage.trophyAltText")}
-                    width={120}
-                  />
-                </div>
-              </Stack.Item>
-            </Stack>
-          </Card>
+    <Page fullWidth>
+      {/* <LegacyStack alignment="center">
+        <LegacyStack.Item>
+          <Text variant="headingMd" as="h2">
+            Order #1136
+          </Text>
+        </LegacyStack.Item>
+
+        <LegacyStack.Item fill>
+          <Badge>Paid</Badge>
+        </LegacyStack.Item>
+
+         <LegacyStack.Item>
+          <Badge>Processing</Badge>
+        </LegacyStack.Item>
+
+        <LegacyStack.Item>
+          <Badge>Fulfilled</Badge>
+        </LegacyStack.Item>
+
+        <LegacyStack.Item>
+          <Badge>Completed</Badge>
+        </LegacyStack.Item>
+
+      </LegacyStack> */}
+
+      <LegacyStack>
+        <LegacyStack.Item>
+          <CustomSidebar />
+        </LegacyStack.Item>
+
+        {/* <LegacyStack.Item fill>
+          <Layout>
+            <Layout.Section>
+              <LegacyCard title="Online store dashboard" sectioned>
+                <p>View a summary of your online store’s performance.</p>
+                <p>Lorm </p>
+              </LegacyCard>
+            </Layout.Section>
+            <Layout.Section>
+
         </Layout.Section>
-        <Layout.Section>
-          <ProductsCard />
-        </Layout.Section>
-      </Layout>
+          </Layout>
+        </LegacyStack.Item> */}
+
+        <LegacyStack.Item>
+          {/* <Popover
+            active={popoverActive}
+            activator={activator}
+            autofocusTarget="first-node"
+            onClose={togglePopoverActive}
+          >
+            <ActionList
+              actionRole="menuitem"
+              items={[{ content: 'Import' }, { content: 'Export' }]}
+              togglePopoverActive={togglePopoverActive}
+            />
+          </Popover> */}
+          {/* <Popover
+        active={active}
+        activator={activator}
+        autofocusTarget="first-node"
+        onClose={toggleActive}
+      >
+        <ActionList
+          actionRole="menuitem"
+          items={[
+            {
+              content: 'Import file',
+              onAction: handleImportedAction,
+            },
+            {
+              content: 'Export file',
+              onAction: handleExportedAction,
+            },
+          ]}
+        />
+      </Popover> */}
+
+          {/* <Select
+            label="Date range"
+            options={options}
+            onChange={handleSelectChange}
+            value={selected}
+          /> */}
+        </LegacyStack.Item>
+
+        <LegacyStack.Item>
+          <ButtonGroup>
+            <Button>Cancel</Button>
+            <Button primary>Save</Button>
+         </ButtonGroup>
+        </LegacyStack.Item>
+
+      </LegacyStack>
+
     </Page>
   );
 }

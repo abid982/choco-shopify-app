@@ -26,6 +26,14 @@ export default function App() {
                   label: t("NavigationMenu.pageName"),
                   destination: "/pagename",
                 },
+                {
+                  label: "Plan and Pricing",
+                  destination: "/planandpricing"
+                },
+                {
+                  label: "Tutorial Videos",
+                  destination: "/tutorialvideos"
+                }
               ]}
             />
             <Routes pages={pages} />
